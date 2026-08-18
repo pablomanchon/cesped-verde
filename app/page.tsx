@@ -203,8 +203,15 @@ export default function Home() {
           <div className="testimonial-person"><span>CV</span><div><strong>Nuestro compromiso</strong><small>Diseño consciente y cuidado responsable</small></div></div>
         </section>
 
-        <section className="areas">
-          <span>Ciudad de Mendoza</span><i>✦</i><span>Godoy Cruz</span><i>✦</i><span>Guaymallén</span><i>✦</i><span>Luján de Cuyo</span><i>✦</i><span>Maipú</span>
+        <section className="areas" aria-label="Zonas de atención">
+          <div className="areas-track">
+            <div className="areas-group">
+              <span>Ciudad de Mendoza</span><i>✦</i><span>Godoy Cruz</span><i>✦</i><span>Guaymallén</span><i>✦</i><span>Luján de Cuyo</span><i>✦</i><span>Maipú</span><i>✦</i>
+            </div>
+            <div className="areas-group areas-group-copy" aria-hidden="true">
+              <span>Ciudad de Mendoza</span><i>✦</i><span>Godoy Cruz</span><i>✦</i><span>Guaymallén</span><i>✦</i><span>Luján de Cuyo</span><i>✦</i><span>Maipú</span><i>✦</i>
+            </div>
+          </div>
         </section>
 
         <section className="contact section" id="contacto">
