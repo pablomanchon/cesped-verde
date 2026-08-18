@@ -169,7 +169,6 @@ export default function Home() {
                 quality={84}
               />
             </div>
-            <div className="about-stamp"><strong>3×</strong><span>diseño · cuidado<br />y riego eficiente</span></div>
           </div>
           <div className="about-copy">
             <p className="eyebrow"><span /> Nuestra forma de trabajar</p>
