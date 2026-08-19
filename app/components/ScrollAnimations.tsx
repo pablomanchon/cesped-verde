@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const revealGroups = [
   {
-    selector: ".section-heading, .section-lead, .about-image-wrap, .contact-form",
+    selector: ".section-heading, .section-lead, .monthly-plans-header > p, .contact-form",
     direction: "up",
   },
   {
@@ -12,7 +12,7 @@ const revealGroups = [
     direction: "up",
   },
   {
-    selector: ".service-card, .steps article, .footer-main > *, .footer-bottom > *",
+    selector: ".service-card, .monthly-plan, .steps article, .footer-main > *, .footer-bottom > *",
     direction: "up",
   },
 ];

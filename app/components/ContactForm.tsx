@@ -36,10 +36,10 @@ export default function ContactForm() {
           ¿Qué necesitás?
           <select name="servicio" defaultValue="">
             <option value="" disabled>Seleccioná un servicio</option>
-            <option>Diseño y paisajismo</option>
-            <option>Mantenimiento integral</option>
-            <option>Riego automatizado</option>
-            <option>Poda y cuidado</option>
+            <option>Diseño, transformación y paisajismo</option>
+            <option>Mantenimiento integral personalizado</option>
+            <option>Sistema de riego automatizado</option>
+            <option>Poda y sanidad vegetal</option>
             <option>Otra consulta</option>
           </select>
         </label>
