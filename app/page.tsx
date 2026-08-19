@@ -5,27 +5,59 @@ import ScrollAnimations from "./components/ScrollAnimations";
 const services = [
   {
     number: "01",
-    title: "Diseño y paisajismo",
-    text: "Proyectamos jardines funcionales, estéticos y adaptados al clima mendocino.",
+    title: "Diseño, transformación y paisajismo",
+    text: "Proyectamos jardines funcionales, estéticos, adaptados al clima mendocino y a tu hogar.",
     icon: "landscape",
   },
   {
     number: "02",
-    title: "Mantenimiento integral",
-    text: "Corte, bordes, fertilización y cuidado periódico para disfrutar sin ocuparte.",
+    title: "Mantenimiento integral personalizado",
+    text: "Según tu espacio, nos encargamos de todos los detalles necesarios y cuidados periódicos, para que puedas disfrutar sin ocuparte.",
     icon: "leaf",
   },
   {
     number: "03",
-    title: "Riego automatizado",
+    title: "Sistema de riego automatizado",
     text: "Instalamos y optimizamos sistemas eficientes para aprovechar cada gota de agua.",
     icon: "water",
   },
   {
     number: "04",
     title: "Poda y sanidad vegetal",
-    text: "Cuidamos árboles y plantas para que crezcan fuertes, seguros y saludables.",
+    text: "Cuidamos todo tu jardín, enfocándonos en árboles y arbustos para que crezcan fuertes, seguros y saludables.",
     icon: "branch",
+  },
+];
+
+const monthlyPlans = [
+  {
+    number: "01",
+    title: "Mantenimiento esencial",
+    frequency: "2 visitas al mes",
+    description: "El cuidado periódico que tu jardín necesita para mantenerse ordenado y saludable.",
+    features: ["Corte de césped y bordes", "Limpieza general", "Control del estado de las plantas"],
+  },
+  {
+    number: "02",
+    title: "Cuidado integral",
+    frequency: "4 visitas al mes",
+    description: "Un seguimiento más frecuente para disfrutar un espacio verde siempre listo.",
+    features: ["Todo lo incluido en el plan esencial", "Poda de arbustos y plantas", "Fertilización y control preventivo"],
+    featured: true,
+  },
+  {
+    number: "03",
+    title: "Mantenimiento intensivo",
+    frequency: "6 visitas al mes",
+    description: "Mayor frecuencia de atención para espacios amplios o jardines de uso intensivo.",
+    features: ["Cuidado frecuente del césped", "Poda y limpieza continua", "Seguimiento de riego y sanidad"],
+  },
+  {
+    number: "04",
+    title: "Jardín completo",
+    frequency: "Plan personalizado",
+    description: "Una propuesta a medida para jardines que requieren una atención más completa.",
+    features: ["Mantenimiento integral", "Revisión del sistema de riego", "Planificación según cada estación"],
   },
 ];
 
@@ -157,6 +189,29 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="monthly-plans section" id="planes-mensuales">
+          <div className="monthly-plans-header">
+            <div className="section-heading">
+              <p className="eyebrow"><span /> Contrataciones mensuales</p>
+              <h2>Cuidado continuo,<br /><em>todo el año.</em></h2>
+            </div>
+            <p>Elegí la frecuencia que mejor se adapte a tu espacio. Estos planes son ejemplos y podemos personalizarlos según las necesidades de tu jardín.</p>
+          </div>
+          <div className="monthly-plans-grid">
+            {monthlyPlans.map((plan) => (
+              <article className={`monthly-plan${plan.featured ? " monthly-plan-featured" : ""}`} key={plan.number}>
+                <div className="monthly-plan-top"><span>{plan.number}</span><small>{plan.frequency}</small></div>
+                <h3>{plan.title}</h3>
+                <p>{plan.description}</p>
+                <ul>
+                  {plan.features.map((feature) => <li key={feature}><span aria-hidden="true">✓</span>{feature}</li>)}
+                </ul>
+                <a href="#contacto" aria-label={`Consultar por el plan ${plan.title}`}>Consultar este plan <span aria-hidden="true">↗</span></a>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="about section" id="nosotros">
           <div className="about-image-wrap">
             <div className="about-image-frame">
@@ -165,6 +220,7 @@ export default function Home() {
                 src="/images/mantenimiento-jardin.webp"
                 alt="Trabajo profesional de mantenimiento de césped y canteros en Mendoza"
                 fill
+                loading="eager"
                 sizes="(max-width: 800px) 100vw, 50vw"
                 quality={84}
               />
@@ -189,17 +245,16 @@ export default function Home() {
             <h2>Del primer mensaje a<br /><em>tu nuevo jardín.</em></h2>
           </div>
           <div className="steps">
-            <article><span>01</span><div className="step-dot" /><h3>Nos contás tu idea</h3><p>Escribinos y coordinamos una visita a tu espacio.</p></article>
-            <article><span>02</span><div className="step-dot" /><h3>Armamos la propuesta</h3><p>Te presentamos una solución clara y un presupuesto detallado.</p></article>
-            <article><span>03</span><div className="step-dot" /><h3>Nos ponemos a trabajar</h3><p>Ejecutamos el proyecto con orden, cuidado y atención.</p></article>
-            <article><span>04</span><div className="step-dot" /><h3>Vos lo disfrutás</h3><p>Te dejamos todo listo y seguimos cerca cuando nos necesites.</p></article>
+            <article><span>01</span><div className="step-dot" /><h3>Nos contás tu idea</h3><p>Escribinos y coordinamos una visita a tu espacio para que la visualicemos juntos.</p></article>
+            <article><span>02</span><div className="step-dot" /><h3>Armamos la propuesta</h3><p>Te presentamos un diseño claro y un presupuesto detallado.</p></article>
+            <article><span>03</span><div className="step-dot" /><h3>Nos ponemos a trabajar</h3><p>Ejecutamos el proyecto desde tus propuestas con cuidado, profesionalismo y atención en cada detalle.</p></article>
+            <article><span>04</span><div className="step-dot" /><h3>Vos lo disfrutás</h3><p>Dejamos listo tu jardín para que puedas habitarlo y seguimos cerca cuando más nos necesites.</p></article>
           </div>
         </section>
 
         <section className="testimonial section">
           <div className="quote-mark">“</div>
           <blockquote>Un buen jardín no sólo se ve lindo: <em>se adapta a tu vida, al clima y al paso del tiempo.</em></blockquote>
-          <div className="testimonial-person"><span>CV</span><div><strong>Nuestro compromiso</strong><small>Diseño consciente y cuidado responsable</small></div></div>
         </section>
 
         <section className="areas" aria-label="Zonas de atención">
